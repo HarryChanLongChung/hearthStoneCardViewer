@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HearthStone</string>
+    <string name="creator_name">Chan Long Chung</string>
+    <string name="search_title">Search</string>
+
+    <string name="search_done">DONE</string>
+    <string name="search_cancel">CANCEL</string>
+    <string name="search_reset_instruction">(click to reset)</string>
+</resources>
