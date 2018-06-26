@@ -1,2 +1,2 @@
 # hearthStoneCardViewer
-A code challenge task, may be an extending side project in the future
+A side project to understand the use of Moshi and OkHttp3

@@ -1,4 +1,4 @@
-package com.demo.hearthstone
+package com.demo.hearthstone.datamodels
 
 import com.squareup.moshi.Json
 

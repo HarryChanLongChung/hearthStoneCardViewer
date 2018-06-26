@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.demo.hearthstone.Models
+import com.demo.hearthstone.datamodels.Models
 import com.demo.hearthstone.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.grid_card_layout.view.*

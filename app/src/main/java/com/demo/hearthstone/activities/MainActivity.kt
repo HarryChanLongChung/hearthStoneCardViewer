@@ -1,4 +1,4 @@
-package com.demo.hearthstone
+package com.demo.hearthstone.activities
 
 import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
@@ -8,7 +8,10 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.demo.hearthstone.datamodels.Models
+import com.demo.hearthstone.R
 import com.demo.hearthstone.adapters.RecyclerGridAdapter
+import com.demo.hearthstone.utils.HttpRequestUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -19,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     lateinit var allCards: List<Models.Card>
-    var filteredResult: ArrayList<Models.Card> = arrayListOf()
+    private var filteredResult: ArrayList<Models.Card> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -106,8 +109,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun httpRequestReady() {
         spin_kit.visibility = View.GONE
-//        gridview.visibility = View.VISIBLE
-//        gridview.adapter = GridAdapter(this, allCards)
         recyclerGridView.visibility = View.VISIBLE
         recyclerGridView.adapter = RecyclerGridAdapter(this, allCards)
     }

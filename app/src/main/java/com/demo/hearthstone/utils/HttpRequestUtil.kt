@@ -1,5 +1,6 @@
-package com.demo.hearthstone
+package com.demo.hearthstone.utils
 
+import com.demo.hearthstone.datamodels.Models
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.*
