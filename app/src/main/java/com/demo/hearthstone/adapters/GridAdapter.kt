@@ -1,10 +1,12 @@
-package com.demo.hearthstone
+package com.demo.hearthstone.adapters
 
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.view.LayoutInflater
+import com.demo.hearthstone.Models
+import com.demo.hearthstone.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.grid_card_layout.view.*
 

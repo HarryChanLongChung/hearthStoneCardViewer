@@ -56,20 +56,27 @@
         </LinearLayout>
     </LinearLayout>
 
-    <GridView
-        android:id="@+id/gridview"
+    <!--<GridView-->
+        <!--android:id="@+id/gridview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:columnWidth="90dp"-->
+        <!--android:gravity="center"-->
+        <!--android:horizontalSpacing="10dp"-->
+        <!--android:numColumns="2"-->
+        <!--android:padding="10dp"-->
+        <!--android:stretchMode="columnWidth"-->
+        <!--android:verticalSpacing="10dp"-->
+        <!--android:visibility="gone"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/btSearchInput" />-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerGridView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnWidth="90dp"
-        android:gravity="center"
-        android:horizontalSpacing="10dp"
-        android:numColumns="2"
-        android:padding="10dp"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btSearchInput" />
+        app:layout_constraintTop_toBottomOf="@id/btSearchInput"/>
 
     <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/spin_kit"

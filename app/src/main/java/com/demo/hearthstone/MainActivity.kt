@@ -3,10 +3,12 @@ package com.demo.hearthstone
 import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.demo.hearthstone.adapters.RecyclerGridAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        recyclerGridView.layoutManager = GridLayoutManager(this, 2)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -50,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         if (::allCards.isInitialized) return
 
         spin_kit.visibility = View.VISIBLE
-        gridview.visibility = View.GONE
+        recyclerGridView.visibility = View.GONE
 
         HttpRequestUtil.getallCards(object : HttpRequestUtil.Companion.HttpRequestListener {
             override fun onSuccess(response: Models.MpApiJsonResponse?) {
@@ -76,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
             llSearchInterface.visibility = View.GONE
             spin_kit.visibility = View.VISIBLE
-            gridview.visibility = View.GONE
+            recyclerGridView.visibility = View.GONE
 
             filteredResult.clear()
             allCards.forEach {
@@ -86,8 +89,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             spin_kit.visibility = View.GONE
-            gridview.visibility = View.VISIBLE
-            gridview.adapter = GridAdapter(this, filteredResult)
+            recyclerGridView.visibility = View.VISIBLE
+            recyclerGridView.adapter = RecyclerGridAdapter(this, filteredResult)
         }
 
         btCancel.setOnClickListener {
@@ -96,21 +99,23 @@ class MainActivity : AppCompatActivity() {
 
         btSearchInput.setOnClickListener {
             it.visibility = View.GONE
-            gridview.visibility = View.VISIBLE
-            gridview.adapter = GridAdapter(this, allCards)
+            recyclerGridView.visibility = View.VISIBLE
+            recyclerGridView.adapter = RecyclerGridAdapter(this, filteredResult)
         }
     }
 
     private fun httpRequestReady() {
         spin_kit.visibility = View.GONE
-        gridview.visibility = View.VISIBLE
-        gridview.adapter = GridAdapter(this, allCards)
+//        gridview.visibility = View.VISIBLE
+//        gridview.adapter = GridAdapter(this, allCards)
+        recyclerGridView.visibility = View.VISIBLE
+        recyclerGridView.adapter = RecyclerGridAdapter(this, allCards)
     }
 
     private fun openSearchInterface() {
         if (!::allCards.isInitialized) return
 
         llSearchInterface.visibility = View.VISIBLE
-        gridview.adapter = GridAdapter(this, allCards)
+        recyclerGridView.adapter = RecyclerGridAdapter(this, allCards)
     }
 }
