@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         btSearchInput.setOnClickListener {
             it.visibility = View.GONE
             recyclerGridView.visibility = View.VISIBLE
-            recyclerGridView.adapter = RecyclerGridAdapter(this, filteredResult)
+            recyclerGridView.adapter = RecyclerGridAdapter(this, allCards)
         }
     }
 
@@ -115,8 +115,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun openSearchInterface() {
         if (!::allCards.isInitialized) return
-
         llSearchInterface.visibility = View.VISIBLE
-        recyclerGridView.adapter = RecyclerGridAdapter(this, allCards)
     }
 }
