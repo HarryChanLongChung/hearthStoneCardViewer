@@ -13,6 +13,8 @@ import com.demo.hearthstone.R
 import com.demo.hearthstone.adapters.RecyclerGridAdapter
 import com.demo.hearthstone.utils.HttpRequestUtil
 import kotlinx.android.synthetic.main.activity_main.*
+import android.app.Activity
+import android.view.inputmethod.InputMethodManager
 
 
 class MainActivity : AppCompatActivity() {
@@ -76,6 +78,8 @@ class MainActivity : AppCompatActivity() {
         })
 
         btSearch.setOnClickListener {
+            hideKeyboard(llSearchInterface)
+
             val search = etSearchText.text.toString()
             btSearchInput.visibility = View.VISIBLE
             btSearchInput.text = search + SEARCH_RESET
@@ -97,6 +101,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btCancel.setOnClickListener {
+            hideKeyboard(llSearchInterface)
             llSearchInterface.visibility = View.GONE
         }
 
@@ -116,5 +121,10 @@ class MainActivity : AppCompatActivity() {
     private fun openSearchInterface() {
         if (!::allCards.isInitialized) return
         llSearchInterface.visibility = View.VISIBLE
+    }
+
+    private fun hideKeyboard(view: View) {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }
