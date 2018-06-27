@@ -7,10 +7,9 @@ This is made to try out :
 
 ## Demo
 
-Basic :
-<img src="https://github.com/HarryChanLongChung/hearthStoneCardViewer/blob/master/demoGif_startup.gif" width="100px">
-Searching functionality :
-![test](https://github.com/HarryChanLongChung/hearthStoneCardViewer/blob/master/demoGif_search.gif)
+| Basic : | Searching functionality : |
+| --- | --- |
+| <img src="https://github.com/HarryChanLongChung/hearthStoneCardViewer/blob/master/demoGif_startup.gif" width="250px"> |<img src="https://github.com/HarryChanLongChung/hearthStoneCardViewer/blob/master/demoGif_search.gif" width="250px"> |
 
 ## Code
 Using moshi with data class allows me to write a least amount of code to parse the JSON response from this [API](https://market.mashape.com/omgvamp/hearthstone#all-cards)
